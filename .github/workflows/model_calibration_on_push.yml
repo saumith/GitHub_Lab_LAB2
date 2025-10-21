@@ -36,6 +36,5 @@ jobs:
           git config user.email github-actions@github.com
           git add models metrics
           git commit -m "🤖 Auto calibration: new calibrated model"
-          git pull origin main --rebase
-          git push origin main
+          git push origin main --force
 
