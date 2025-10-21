@@ -242,7 +242,3 @@ graph LR
 - [Probability Calibration in scikit-learn](https://scikit-learn.org/stable/modules/calibration.html)
 
 ---
-
----
-
-**Made with ❤️ and Python**
