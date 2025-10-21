@@ -37,5 +37,4 @@ jobs:
           git config user.email github-actions@github.com
           git add models metrics data
           git commit -m "🤖 Auto retrain: new model + metrics"
-          git pull origin main --rebase
-          git push origin main
+          git push origin main --force
