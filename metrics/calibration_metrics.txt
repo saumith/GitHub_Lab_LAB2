@@ -1,0 +1,11 @@
+Calibrated from model: model_20251020_200544.pkl
+
+Before calibration:
+  Brier Score = 0.0656
+  F1 = 0.4167
+  Accuracy = 0.9072
+
+After calibration:
+  Brier Score = 0.0621
+  F1 = 0.4430
+  Accuracy = 0.9083

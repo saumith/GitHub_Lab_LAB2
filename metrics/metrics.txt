@@ -1,0 +1,12 @@
+Model: model_20251020_200544.pkl
+Accuracy: 0.9072
+F1 Score: 0.4167
+
+              precision    recall  f1-score   support
+
+           0       0.92      0.98      0.95       807
+           1       0.65      0.31      0.42        98
+
+    accuracy                           0.91       905
+   macro avg       0.79      0.64      0.68       905
+weighted avg       0.89      0.91      0.89       905

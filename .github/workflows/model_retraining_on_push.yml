@@ -1,0 +1,37 @@
+name: Model Retraining and Evaluation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  train-evaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Train Model
+        run: python src/train_model.py
+
+      - name: Evaluate Model
+        run: python src/evaluate_model.py
+
+      - name: Commit and Push Artifacts
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add models metrics data
+          git commit -m "🤖 Auto retrain: new model + metrics"
+          git push

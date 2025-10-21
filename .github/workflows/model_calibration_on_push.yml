@@ -1,0 +1,36 @@
+name: Model Calibration
+
+on:
+  workflow_run:
+    workflows: ["Model Retraining and Evaluation"]
+    types:
+      - completed
+
+jobs:
+  calibrate:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Calibrate Model
+        run: python src/calibrate.py
+
+      - name: Commit and Push Calibrated Model
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add models metrics
+          git commit -m "🤖 Auto calibration: new calibrated model"
+          git push
