@@ -47,7 +47,7 @@ Build a supervised machine-learning model that classifies customers into two gro
 
 ---
 
-##Project Structure
+## Project Structure
 
 ```
 GitHub_Lab_LAB2/
@@ -71,7 +71,7 @@ GitHub_Lab_LAB2/
 
 ---
 
-##Local Pipeline Overview
+## Local Pipeline Overview
 
 ### 1. **Data Loading & Preprocessing**  
 - Automatically downloads & extracts the UCI Bank dataset  
@@ -95,7 +95,7 @@ GitHub_Lab_LAB2/
 
 ## GitHub Actions Workflows
 
-###Model Retraining Workflow (`model_retraining_on_push.yml`)
+### Model Retraining Workflow (`model_retraining_on_push.yml`)
 
 **Trigger:** Automatically runs on every push to `main` branch
 
@@ -116,7 +116,7 @@ metrics/metrics.txt
 
 ---
 
-###Model Calibration Workflow (`model_calibration_on_push.yml`)
+### Model Calibration Workflow (`model_calibration_on_push.yml`)
 
 **Trigger:** Automatically runs after model retraining completes
 
