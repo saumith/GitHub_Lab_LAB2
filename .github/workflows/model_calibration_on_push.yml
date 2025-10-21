@@ -5,7 +5,10 @@ on:
     workflows: ["Model Retraining and Evaluation"]
     types:
       - completed
-
+      
+permissions:
+  contents: write
+  
 jobs:
   calibrate:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
